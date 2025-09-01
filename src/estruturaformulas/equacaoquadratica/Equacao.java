@@ -41,4 +41,14 @@ public class Equacao {
     public String getConcavidade(){
         return (A > 0) ? "Concavidade para cima U" : "Concavidade para baixo (n)";
     }
+
+    public Vertice getVertice(){
+        double xv = - B / (2 * A);
+        double yv = - getDelta() / (4 * A);
+        return new Vertice(xv, yv);
+    }
+
+    public Raizes getRaizes(){
+
+    }
 }
