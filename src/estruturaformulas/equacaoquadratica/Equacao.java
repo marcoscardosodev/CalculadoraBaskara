@@ -49,6 +49,19 @@ public class Equacao {
     }
 
     public Raizes getRaizes(){
+        double delta = getDelta();
+        if(delta < 0){
+            return null;
+
+        }else if(delta == 0 ){
+            double x = -B / (2 * A);
+            return new Raizes(x, x);
+
+        }else{
+            double x1 = (-B + Math.sqrt(delta)) / (2 * A);
+            double x2 = (-B - Math.sqrt(delta)) / (2 * A);
+            return new Raizes(x1, x2);
+        }
 
     }
 }
