@@ -1,9 +1,13 @@
 package estruturaformulas.equacaoquadratica;
 
+import java.util.Scanner;
+
 public class CalculoEquacao {
     public static void main(String[] args) {
+
+
         double [][] equacoes = {
-                {1,-5,6},
+                {1,-8,7},
                 {1,2,1},
                 {2,-4,-6},
                 {1,0,1}

@@ -12,8 +12,8 @@ public class Equacao {
 
         }
         this.A = A;
-        this.B = A;
-        this.C = A;
+        this.B = B;
+        this.C = C;
 
     }
 
@@ -30,7 +30,7 @@ public class Equacao {
     }
 
     public double getDelta(){
-        return (B * B) - (4 * A * C);
+        return (B * B) - 4 * A * C;
     }
     public double getXVertice(){
         return -B / (2 * A);
@@ -64,4 +64,42 @@ public class Equacao {
         }
 
     }
+
+    public String getEquacaoFormatada(){
+        StringBuilder sb = new StringBuilder();
+
+        if(A == 0 ){
+            sb.append("X²");
+
+        }else if(A == -1){
+            sb.append("-X²");
+        }else{
+            sb.append(A).append("X²");
+        }
+
+        if(B != 0){
+            if(B > 0){
+               sb.append(" + ");
+            }else{
+                sb.append(" - ");
+            }
+            double absB = Math.abs(B);
+            if(absB == 1 ){
+                sb.append("X");
+            }else{
+                sb.append(absB).append("X");
+            }
+        }
+
+        if(C != 0){
+            if(C > 0){
+                sb.append(" + ");
+            }else{
+                sb.append(" - ");
+            }
+            sb.append(Math.abs(C));
+        }
+        sb.append(" = 0");
+    }
 }
+
