@@ -100,6 +100,7 @@ public class Equacao {
             sb.append(Math.abs(C));
         }
         sb.append(" = 0");
+        return sb.toString();
     }
 }
 
