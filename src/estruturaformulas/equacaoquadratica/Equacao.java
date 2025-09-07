@@ -9,7 +9,9 @@ public class Equacao {
     public Equacao(double A, double B, double C){
         if(A == 0 ){
             throw new IllegalArgumentException("O coefiente 'A' não pode ser igual a zero");
-
+        }
+        if(!Double.isFinite(A) || !Double.isFinite(B) || !Double.isFinite(C)){
+            throw new IllegalArgumentException("Os coeficientes devem ser números finitios");
         }
         this.A = A;
         this.B = B;
@@ -103,6 +105,13 @@ public class Equacao {
         }
         sb.append(" = 0");
         return sb.toString();
+    }
+    public String toString(){
+        return "Equação: " + getEquacaoFormatada() + "\n" +
+                "Delta: " + getDelta() + "\n" +
+                "Concavidade: " + getConcavidade() + "\n" +
+                "Vértice: " + getVertice() + "\n" +
+                "Raizes: " + getRaizes() + "\n";
     }
 }
 
