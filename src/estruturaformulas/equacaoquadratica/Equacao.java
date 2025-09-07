@@ -9,6 +9,7 @@ public class Equacao {
     public Equacao(double A, double B, double C){
         if(A == 0 ){
             throw new IllegalArgumentException("O coefiente 'A' não pode ser igual a zero");
+
         }
         if(!Double.isFinite(A) || !Double.isFinite(B) || !Double.isFinite(C)){
             throw new IllegalArgumentException("Os coeficientes devem ser números finitios");
