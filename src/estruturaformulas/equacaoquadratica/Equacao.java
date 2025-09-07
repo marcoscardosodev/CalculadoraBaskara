@@ -51,7 +51,9 @@ public class Equacao {
     public Raizes getRaizes(){
         double delta = getDelta();
         if(delta < 0){
-            return null;
+            double parteReal = -B / (2 * A);
+            double parteImaginaria = Math.sqrt(-delta) / (2 * A);
+            return new Raizes(parteReal, parteImaginaria, true);
 
         }else if(delta == 0 ){
             double x = -B / (2 * A);
