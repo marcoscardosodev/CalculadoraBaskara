@@ -48,13 +48,39 @@ public class GraficoParabola extends JFrame{
         g2d.drawLine(-centroX, 0, centroX, 0);
         g2d.drawLine(-centroY, 0, centroY, 0);
 
+        g2d.setColor(Color.BLUE);
+        for (int i = 0; i < pontos.size() -1; i++){
+            Point p1 = pontos.get(i);
+            Point p2 = pontos.get(i + 1);
+            g2d.drawLine(p1.x, p1.y, p2.x, p2.y);
+        }
+
         g2d.setColor(Color.RED);
         int xv = (int) (equacao.getXVertice() * 50);
         int yv = (int) (equacao.getYVertice() * -50);
         g2d.fillOval(xv - 5, yv - 5, 10, 10);
         g2d.drawString("Vertice", xv + 10, yv);
 
+        Raizes raizes = equacao.getRaizes();
+        if (raizes != null){
+            g2d.setColor(Color.GREEN);
+            int x1 = (int) (raizes.getX1() * 50);
+            g2d.fillOval(x1 - 5, 0 - 5, 10, 10);
+            g2d.drawString("Raiz x1", x1 + 10, 15);
 
+            if (raizes.getX1() != raizes.getX2()){
+                int x2 = (int) (raizes.getX2() * 50);
+                g2d.fillOval(x2 - 5, 0 - 5, 10, 10);
+                g2d.drawString("Raiz x2", x2 + 10, 15);
+            }
+        }
+    }
+
+    public static void mostrarGrafico(Equacao equacao){
+        SwingUtilities.invokeLater(() ->{
+            GraficoParabola grafico = new GraficoParabola(equacao);
+            grafico.setVisible(true);
+        });
     }
 }
 

@@ -36,6 +36,12 @@ public class Main {
         System.out.println("\nEquação gerada com sucesso!");
         System.out.println(eq);
 
+        System.out.println("\nDeseja ver o gráfico? (s/n)");
+        String resposta = scanner.next();
+        if(resposta.equalsIgnoreCase("s")){
+            GraficoParabola.mostrarGrafico(eq);
+        }
+
         scanner.close();
     }
 }
